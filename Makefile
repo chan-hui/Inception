@@ -6,7 +6,7 @@
 #    By: chanhuil <chanhuil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/27 11:34:02 by chanhuil          #+#    #+#              #
-#    Updated: 2022/07/27 11:34:02 by chanhuil         ###   ########.fr        #
+#    Updated: 2022/08/01 15:26:51 by chanhuil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,6 @@ re:
 	docker-compose -f ./srcs/docker-compose.yml up --build
 
 clean:
-	docker stop $$(docker ps -qa);\
-	docker rm $$(docker ps -qa);\
-	docker rmi -f $$(docker images -qa);\
-	docker volume rm $$(docker volume ls -q);\
-	docker network rm $$(docker network ls -q);\
+	docker rmi -f $$(docker images -qa);
 
 .PHONY: all re down clean
