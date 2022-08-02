@@ -19,7 +19,8 @@ down:
 re:
 	docker-compose -f ./srcs/docker-compose.yml up --build
 
-clean:
-	docker rmi -f $$(docker images -qa);
+clean: down
+	docker rmi -f $$(docker images -qa);\
+	docker volume rm $$(docker volume ls -q);
 
 .PHONY: all re down clean
