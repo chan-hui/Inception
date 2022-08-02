@@ -41,13 +41,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: "C:/Users/qaaqa/data/mariadb"
+      device: "/home/chanhuil/data/mariadb"
   wp:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: "C:/Users/qaaqa/data/wordpress"
+      device: "/home/chanhuil/data/wordpress"
 
 networks:
   42-network:
