@@ -6,7 +6,7 @@
 #    By: chanhuil <chanhuil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/27 11:34:02 by chanhuil          #+#    #+#              #
-#    Updated: 2022/08/01 15:26:51 by chanhuil         ###   ########.fr        #
+#    Updated: 2022/08/02 15:36:20 by chanhuil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,4 +23,7 @@ clean: down
 	docker rmi -f $$(docker images -qa);\
 	docker volume rm $$(docker volume ls -q);
 
-.PHONY: all re down clean
+fclean: clean
+	sudo rm -rf /home/chanhuil/data
+
+.PHONY: all re down clean fclean
