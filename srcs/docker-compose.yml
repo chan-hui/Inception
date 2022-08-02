@@ -37,12 +37,14 @@ services:
 
 volumes:
   db:
+    name: db
     driver: local
     driver_opts:
       type: none
       o: bind
       device: "/home/chanhuil/data/mariadb"
   wp:
+    name: wp
     driver: local
     driver_opts:
       type: none
